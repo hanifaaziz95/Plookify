@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="106.0" prefWidth="1024.0" style="-fx-background-color: #262626;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="common.mediaBarController">
+   <children>
+      <Button fx:id="playButton" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" onAction="#playButtonClicked" prefHeight="36.0" prefWidth="47.0" style="-fx-background-radius: 10;">
+         <graphic>
+            <ImageView fx:id="img" fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Button id="nextSong" fx:id="nextButton" layoutX="71.0" layoutY="27.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="26.0" prefWidth="25.0" style="-fx-background-radius: 10;">
+         <graphic>
+            <ImageView fx:id="img2" fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" />
+         </graphic>
+      </Button>
+      <Slider fx:id="timeSlider" layoutX="137.0" layoutY="41.0" prefHeight="19.0" prefWidth="581.0" />
+      <Label id="playTime" fx:id="playtime" layoutX="718.0" layoutY="43.0" text="Label" textFill="WHITE" />
+      <Label layoutX="867.0" layoutY="75.0" text="Vol:" textFill="WHITE" />
+      <Slider fx:id="volumeSlider" layoutX="898.0" layoutY="76.0" prefHeight="15.0" prefWidth="92.0" value="100.0" />
+      <Label layoutX="867.0" layoutY="4.0" text="Currently playing:" textFill="WHITE" />
+      <Label fx:id="songText" layoutX="869.0" layoutY="19.0" prefHeight="17.0" prefWidth="141.0" text="Song: Loyal" textFill="WHITE" />
+      <Label fx:id="genText" layoutX="869.0" layoutY="37.0" prefHeight="17.0" prefWidth="136.0" text="Genre: R&amp;B/Hip-Hop" textFill="WHITE" />
+      <Label fx:id="artText" layoutX="871.0" layoutY="54.0" text="Artist: Chris Brown" textFill="WHITE" />
+      <Button fx:id="jumpButton" layoutX="137.0" layoutY="65.0" mnemonicParsing="false" onAction="#jumpButtonClicked" text="Jump to..." />
+   </children>
+</Pane>

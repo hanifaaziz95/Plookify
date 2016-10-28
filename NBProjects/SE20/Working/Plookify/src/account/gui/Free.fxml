@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="account.logic.FreeController">
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="550.0" style="-fx-background-color: #262626;">
+         <children>
+            <Label layoutX="61.0" layoutY="140.0" text="First Name:" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <Label layoutX="62.0" layoutY="244.0" text="Email Address:" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <Label layoutX="63.0" layoutY="208.0" text="Address:" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <TextField fx:id="firstName" layoutX="163.0" layoutY="136.0" prefHeight="27.0" prefWidth="315.0" />
+            <TextField fx:id="address" layoutX="164.0" layoutY="201.0" prefHeight="27.0" prefWidth="315.0" />
+            <TextField fx:id="email" layoutX="164.0" layoutY="234.0" prefHeight="27.0" prefWidth="316.0" />
+            <Button layoutX="288.0" layoutY="387.0" mnemonicParsing="false" onAction="#submitButton" text="Submit" />
+            <Label layoutX="61.0" layoutY="175.0" text="Last Name:" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <TextField fx:id="lastName" layoutX="163.0" layoutY="168.0" prefHeight="27.0" prefWidth="316.0" />
+            <Label layoutX="130.0" layoutY="314.0" text="Username:" textFill="WHITE" />
+            <Label layoutX="129.0" layoutY="345.0" text="Password:" textFill="WHITE" />
+            <TextField fx:id="username" layoutX="224.0" layoutY="309.0" prefHeight="27.0" prefWidth="186.0" />
+            <TextField fx:id="password" layoutX="224.0" layoutY="340.0" prefHeight="27.0" prefWidth="186.0" />
+            <Label layoutX="258.0" layoutY="284.0" text="Create Login:" textFill="WHITE" />
+            <Label fx:id="invalid" layoutX="96.0" layoutY="107.0" text="Complete all fields" textFill="#d70b0b" visible="false" />
+            <ImageView fitHeight="126.0" fitWidth="139.0" layoutX="207.0" layoutY="6.0">
+               <image>
+                  <Image url="@../../common/plookifylogowhite.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="215.0" layoutY="387.0" mnemonicParsing="false" onAction="#back" text="Back" />
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </AnchorPane>
+   </children>
+</Pane>

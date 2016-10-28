@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" style="-fx-background-color: #4d4d4d;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="radio.logic.FXMLController">
+   <top>
+      <Pane prefHeight="97.0" prefWidth="800.0" style="-fx-background-color: #262626;">
+         <children>
+            <TextField fx:id="searchField" layoutX="129.0" layoutY="35.0" prefHeight="27.0" prefWidth="168.0" promptText="Search artist..." />
+            <Button fx:id="searchButton" layoutX="305.0" layoutY="35.0" mnemonicParsing="false" onAction="#searchClicked" text="Search" />
+            <ImageView fx:id="iv" fitHeight="102.0" fitWidth="106.0" layoutX="4.0" layoutY="4.0">
+               </ImageView>
+            <Button fx:id="backButton" layoutX="830.0" layoutY="35.0" mnemonicParsing="false" onAction="#backButton" prefHeight="27.0" prefWidth="80.0" style="-fx-background-radius: 30; -fx-background-color: transparent; -fx-border-color: #74a7e6; -fx-border-radius: 30;" text="&lt; BACK" textFill="#74a7e6" />
+            <Label fx:id="alertText" layoutX="379.0" layoutY="40.0" prefHeight="19.0" prefWidth="215.0" textFill="WHITE" />
+         </children>
+      </Pane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="420.0" prefWidth="748.0" style="-fx-background-color: #262626; -fx-border-color: #333333;" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="table" layoutX="4.0" layoutY="-3.0" prefHeight="499.0" prefWidth="744.0" style="-fx-background-color: #333333; -fx-border-color: #262626;" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="tracknameColumn" prefWidth="177.06502962112427" text="Track Name" />
+                <TableColumn fx:id="artistnameColumn" prefWidth="221.93495178222656" text="Artist Name" />
+                  <TableColumn fx:id="tracklengthColumn" minWidth="0.0" prefWidth="151.46957397460938" text="Length" />
+                  <TableColumn fx:id="genreColumn" minWidth="0.0" prefWidth="191.80899047851562" text="Genre" />
+              </columns>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" left="10.0" />
+               </BorderPane.margin>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <Pane fx:id="sliderPane" prefHeight="106.0" prefWidth="640.0" style="-fx-background-color: #262626;" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Pane prefHeight="512.0" prefWidth="274.0" style="-fx-background-color: #333333; -fx-border-color: #333333;" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="saveButton" layoutX="89.0" layoutY="366.0" mnemonicParsing="false" onAction="#savePlaylist" text="Save Playlist" />
+            <Label layoutX="69.0" layoutY="2.0" prefHeight="104.0" prefWidth="138.0" text="Welcome to Radio! &#10;Search for any artist&#10;to generate a random&#10;playlist of songs of your&#10;favourite genre, then &#10;click Save Playlist!" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="artists" layoutX="61.0" layoutY="136.0" prefHeight="200.0" prefWidth="144.0" />
+            <Label layoutX="76.0" layoutY="111.0" text="Available artists:" textFill="#fff9f9" />
+         </children>
+      </Pane>
+   </right>
+</BorderPane>

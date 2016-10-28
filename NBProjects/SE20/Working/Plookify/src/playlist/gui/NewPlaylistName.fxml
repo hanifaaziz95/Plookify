@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playlist.gui.PlaylistController">
+   <children>
+      <Label layoutX="103.0" layoutY="68.0" text="New name of playlist:" />
+      <TextField fx:id="nameField" layoutX="86.0" layoutY="88.0" />
+      <Button fx:id="saveButton1" layoutX="134.0" layoutY="137.0" mnemonicParsing="false" onAction="#saveNewName" text="Save" />
+   </children>
+</Pane>

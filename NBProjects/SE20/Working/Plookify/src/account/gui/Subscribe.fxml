@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="account.logic.SubscribeController">
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="603.0" prefWidth="800.0" style="-fx-background-color: #262626;">
+         <children>
+            <Label layoutX="137.0" layoutY="73.0" text="First Name:" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <Label layoutX="138.0" layoutY="171.0" text="Email Address:" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <Label layoutX="139.0" layoutY="141.0" text="Address:" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <TextField fx:id="firstName" layoutX="239.0" layoutY="69.0" prefHeight="27.0" prefWidth="440.0" />
+            <TextField fx:id="address" layoutX="240.0" layoutY="134.0" prefHeight="27.0" prefWidth="440.0" />
+            <TextField fx:id="email" layoutX="240.0" layoutY="167.0" prefHeight="27.0" prefWidth="440.0" />
+            <Button layoutX="418.0" layoutY="528.0" mnemonicParsing="false" onAction="#paymentButton" text="Confirm" />
+            <Label layoutX="137.0" layoutY="108.0" text="Last Name:" textFill="WHITE">
+               <effect>
+                  <Blend />
+               </effect>
+            </Label>
+            <TextField fx:id="lastName" layoutX="239.0" layoutY="101.0" prefHeight="27.0" prefWidth="440.0" />
+            <Label layoutX="226.0" layoutY="561.0" text="As a subscription user you will have access to our radio feature." textFill="WHITE" />
+            <Label layoutX="380.0" layoutY="577.0" text="Only £4.99/month" textFill="WHITE" />
+            <Label layoutX="251.0" layoutY="464.0" text="Username:" textFill="WHITE" />
+            <Label layoutX="250.0" layoutY="495.0" text="Password:" textFill="WHITE" />
+            <TextField fx:id="username" layoutX="345.0" layoutY="459.0" />
+            <TextField fx:id="password" layoutX="345.0" layoutY="490.0" />
+            <Label fx:id="invalid" layoutX="184.0" layoutY="34.0" textFill="#dd0000" />
+            <ImageView fitHeight="142.0" fitWidth="150.0" layoutX="-9.0" layoutY="3.0">
+               <image>
+                  <Image url="@../../common/plookifylogowhite.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="358.0" layoutY="529.0" mnemonicParsing="false" onAction="#back" text="Back" />
+            <TabPane layoutX="240.0" layoutY="202.0" prefHeight="234.0" prefWidth="440.0" style="-fx-border-color: #333333;" tabClosingPolicy="UNAVAILABLE">
+               <effect>
+                  <Blend />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <tabs>
+                  <Tab text="PayPal">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="253.0" prefWidth="437.0">
+                           <children>
+                              <Label layoutX="111.0" layoutY="48.0" text="Email Address:" textFill="WHITE" />
+                              <Label layoutX="110.0" layoutY="104.0" text="Password:" textFill="WHITE" />
+                              <Button fx:id="loginPP" layoutX="193.0" layoutY="165.0" mnemonicParsing="false" onAction="#loginToPaypal" text="Login" />
+                              <TextField fx:id="ppEmail" layoutX="109.0" layoutY="65.0" prefHeight="27.0" prefWidth="218.0" />
+                              <ImageView fitHeight="93.0" fitWidth="112.0" layoutX="8.0" layoutY="-15.0">
+                                 <image>
+                                    <Image url="@../../../../../../../../Downloads/PayPal-logo-20071.png" />
+                                 </image>
+                              </ImageView>
+                              <PasswordField fx:id="ppPassword" layoutX="109.0" layoutY="122.0" prefHeight="27.0" prefWidth="219.0" />
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="ccTab" text="Credit Card">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="323.0">
+                           <children>
+                              <Label layoutX="52.0" layoutY="11.0" text="Card Type:" textFill="#eeeeee" />
+                              <Label layoutX="52.0" layoutY="102.0" text="Card Number:" textFill="WHITE" />
+                              <Label layoutX="52.0" layoutY="172.0" text="Expiry Date:" textFill="WHITE" />
+                              <Label layoutX="52.0" layoutY="137.0" text="CVV:" textFill="WHITE" />
+                              <TextField fx:id="cvc" layoutX="167.0" layoutY="133.0" prefHeight="27.0" prefWidth="60.0" />
+                              <ImageView fitHeight="21.0" fitWidth="43.0" layoutX="239.0" layoutY="136.0">
+                                 <image>
+                                    <Image url="@../../../../../../../../Downloads/Picture1.png" />
+                                 </image>
+                              </ImageView>
+                              <TextField fx:id="expiryY" layoutX="218.0" layoutY="168.0" prefHeight="27.0" prefWidth="41.0" />
+                              <TextField fx:id="cardNumber" layoutX="167.0" layoutY="98.0" prefHeight="27.0" prefWidth="214.0" />
+                              <RadioButton fx:id="visa" layoutX="61.0" layoutY="33.0" mnemonicParsing="false" text="Visa" textFill="WHITE">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="cardType" />
+                                 </toggleGroup></RadioButton>
+                              <RadioButton fx:id="mcard" layoutX="129.0" layoutY="34.0" mnemonicParsing="false" text="MasterCard" textFill="WHITE" toggleGroup="$cardType" />
+                              <RadioButton fx:id="amex" layoutX="243.0" layoutY="33.0" mnemonicParsing="false" text="AMEX" textFill="WHITE" toggleGroup="$cardType" />
+                              <TextField fx:id="expiryM" layoutX="167.0" layoutY="168.0" prefHeight="27.0" prefWidth="39.0" />
+                              <Label layoutX="52.0" layoutY="67.0" text="Cardholder Name:" textFill="WHITE" />
+                              <TextField fx:id="cardHolder" layoutX="168.0" layoutY="62.0" prefHeight="27.0" prefWidth="212.0" />
+                              <Label layoutX="209.0" layoutY="170.0" text="/" textFill="WHITE">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Label layoutX="93.0" layoutY="211.0" text="Select Payment Option:" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Italic" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="142.0" layoutY="453.0" text="Create login:" textFill="WHITE" />
+         </children>
+         <effect>
+            <Blend />
+         </effect>
+      </AnchorPane>
+   </children>
+</Pane>
