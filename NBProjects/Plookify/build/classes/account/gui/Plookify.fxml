@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="account.logic.PlookifyController">
+   <children>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="550.0" style="-fx-background-color: #262626; -fx-border-color: black;">
+         <children>
+            <Button layoutX="363.0" layoutY="302.0" mnemonicParsing="false" onAction="#buttonLogin" prefHeight="31.0" prefWidth="63.0" style="-fx-border-color: white; -fx-border-radius: 5;" text="Login" textAlignment="CENTER">
+               <font>
+                  <Font name="Calibri" size="14.0" />
+               </font></Button>
+            <Button layoutX="260.0" layoutY="400.0" mnemonicParsing="false" onAction="#buttonSubscribe" prefHeight="27.0" prefWidth="81.0" text="Subscribe" textFill="#74a7e6">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></Button>
+            <PasswordField fx:id="password" layoutX="109.0" layoutY="322.0" prefHeight="30.0" prefWidth="235.0" promptText="Password" style="-fx-border-radius: 10;">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></PasswordField>
+            <TextField fx:id="username" layoutX="109.0" layoutY="286.0" prefHeight="30.0" prefWidth="235.0" promptText="Username" style="-fx-border-radius: 10;">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></TextField>
+            <Label layoutX="97.0" layoutY="406.0" text="Don't have an account?" textFill="WHITE">
+               <font>
+                  <Font name="Calibri Italic" size="16.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="262.0" fitWidth="276.0" layoutX="136.0" layoutY="30.0">
+               <image>
+                  <Image url="@../../common/plookifylogowhite.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="351.0" layoutY="400.0" mnemonicParsing="false" onAction="#buttonFree" text="Listen Free">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font></Button>
+            <Label fx:id="invalid" layoutX="360.0" layoutY="336.0" text="Sorry, try again." textFill="WHITE" visible="false">
+               <font>
+                  <Font size="10.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </AnchorPane>
+   </children>
+</Pane>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" style="-fx-background-color: #262626;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playlist.gui.PlaylistController">
+   <top>
+      <VBox prefHeight="57.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="searchField" promptText="Search for artist..." style="-fx-border-color: white; -fx-border-radius: 10;">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="15.0" />
+                     </font>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#searchClicked" prefWidth="76.0" style="-fx-border-color: white; -fx-border-radius: 5;" text="Search" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#backButton" prefHeight="27.0" prefWidth="80.0" style="-fx-background-radius: 30; -fx-background-color: transparent; -fx-border-color: #74a7e6; -fx-border-radius: 30;" text="&lt; BACK" textFill="#74a7e6" translateX="645.0" translateY="10.0" />
+               </children>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#newPlaylist" style="-fx-border-color: white; -fx-border-radius: 5;" text="New Playlist" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#renamePlaylist" style="-fx-border-color: white; -fx-border-radius: 5;" text="Rename Playlist">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#getFriendsPlaylists" style="-fx-border-color: white; -fx-border-radius: 5;" text="View Friends Playlists">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#getPrivatePlaylists" style="-fx-border-color: white; -fx-border-radius: 5;" text="View Private Playlists">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="addSongButton" mnemonicParsing="false" onAction="#addSongDB" style="-fx-border-color: white; -fx-border-radius: 5;" text="Add Song to Playlist">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="removeSongButton" mnemonicParsing="false" onAction="#removeSongDB" style="-fx-border-color: white; -fx-border-radius: 5;" text="Remove Song from Playlist">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="changeButton" mnemonicParsing="false" onAction="#changeNowPlaying" style="-fx-border-color: white; -fx-border-radius: 5;" text="Add to Now Playing">
+                     <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Calibri" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <center>
+      <TableView fx:id="table" maxWidth="450.0" style="-fx-background-color: #333333; -fx-border-color: black;" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="artistnameColumn" prefWidth="120.0" text="Artist Name" />
+          <TableColumn fx:id="tracknameColumn" prefWidth="120.0" text="Track Name" />
+            <TableColumn fx:id="tracklengthColumn" prefWidth="120.0" text="Track Length" />
+            <TableColumn fx:id="genreColumn" prefWidth="120.0" text="Genre" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </center>
+   <left>
+      <VBox prefHeight="200.0" prefWidth="150.0" BorderPane.alignment="CENTER">
+         <children>
+            <TableView fx:id="tableview" style="-fx-background-color: #333333; -fx-border-color: black;">
+              <columns>
+                <TableColumn fx:id="playlistnameColumn" prefWidth="149.0" text="Playlist Name" />
+              </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+   </left>
+   <right>
+      <TableView fx:id="view" prefWidth="450.0" style="-fx-background-color: #333333; -fx-border-color: black;" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="anColumn" prefWidth="75.0" text="Artist Name" />
+          <TableColumn fx:id="tnColumn" prefWidth="75.0" text="Track Name" />
+            <TableColumn fx:id="tlColumn" prefWidth="75.0" text="Track Length" />
+            <TableColumn fx:id="gColumn" prefWidth="75.0" text="Genre" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </right>
+   <bottom>
+      <Pane fx:id="sliderPane" prefHeight="106.0" prefWidth="1024.0" style="-fx-background-color: #262626;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

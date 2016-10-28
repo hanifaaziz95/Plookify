@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="common.MainFrameController">
+  <bottom>
+    <Pane prefHeight="106.0" prefWidth="1024.0" style="-fx-background-color: #262626;" BorderPane.alignment="CENTER">
+      <children>
+        <Button fx:id="playButton" layoutX="10.0" layoutY="27.0" mnemonicParsing="false" onAction="#playButtonClicked" prefHeight="36.0" prefWidth="47.0" style="-fx-background-radius: 10;">
+          <graphic>
+            <ImageView fx:id="img" fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" />
+          </graphic>
+        </Button>
+        <Button id="nextSong" fx:id="nextButton" layoutX="71.0" layoutY="27.0" mnemonicParsing="false" onAction="#nextButtonClicked" prefHeight="26.0" prefWidth="25.0" style="-fx-background-radius: 10;">
+          <graphic>
+            <ImageView fx:id="img2" fitHeight="38.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true" />
+          </graphic>
+        </Button>
+        <Slider fx:id="timeSlider" layoutX="137.0" layoutY="41.0" prefHeight="19.0" prefWidth="581.0" />
+        <Label id="playTime" fx:id="playtime" layoutX="718.0" layoutY="43.0" text="Label" textFill="WHITE" />
+        <Label layoutX="867.0" layoutY="75.0" text="Vol:" textFill="WHITE" />
+        <Slider fx:id="volumeSlider" layoutX="898.0" layoutY="76.0" prefHeight="15.0" prefWidth="92.0" value="100.0" />
+        <Label layoutX="867.0" layoutY="4.0" text="Currently playing:" textFill="WHITE" />
+        <Label fx:id="songText" layoutX="869.0" layoutY="19.0" prefHeight="17.0" prefWidth="141.0" text="Song: Loyal" textFill="WHITE" />
+        <Label fx:id="genText" layoutX="869.0" layoutY="37.0" prefHeight="17.0" prefWidth="136.0" text="Genre: R&amp;B/Hip-Hop" textFill="WHITE" />
+        <Label fx:id="artText" layoutX="871.0" layoutY="54.0" text="Artist: Chris Brown" textFill="WHITE" />
+        <Button fx:id="jumpButton" layoutX="137.0" layoutY="65.0" mnemonicParsing="false" onAction="#jumpButtonClicked" text="Jump to..." />
+      </children>
+    </Pane>
+  </bottom>
+  <center>
+    <Pane prefHeight="260.0" prefWidth="477.0" style="-fx-background-color: #333333; -fx-border-color: #262626;" BorderPane.alignment="CENTER">
+      <children>
+        <TableView fx:id="TrackTable" layoutX="53.0" layoutY="46.0" prefHeight="179.0" prefWidth="460.0">
+          <columns>
+            <TableColumn fx:id="tNameCol" maxWidth="5000.0" minWidth="10.0" prefWidth="141.0" text="Track Name" />
+            <TableColumn fx:id="lengthCol" prefWidth="75.0" text="Length" />
+            <TableColumn fx:id="genreCol" prefWidth="75.0" text="Genre" />
+            <TableColumn fx:id="artistCol" maxWidth="5000.0" minWidth="10.0" prefWidth="170.0" text="Artist" />
+          </columns>
+        </TableView>
+        <TableView id="nowPlayView" fx:id="nowPlayTable" layoutX="53.0" layoutY="276.0" prefHeight="171.0" prefWidth="461.0">
+          <columns>
+            <TableColumn fx:id="tNameCol2" maxWidth="5000.0" minWidth="10.0" prefWidth="140.0" text="Track Name" />
+            <TableColumn fx:id="lengthCol2" prefWidth="75.0" text="Length" />
+            <TableColumn fx:id="genreCol2" prefWidth="75.0" text="Genre" />
+            <TableColumn fx:id="artistCol2" maxWidth="5000.0" minWidth="10.0" prefWidth="170.0" text="Artist" />
+          </columns>
+        </TableView>
+        <Label fx:id="nowLabel" layoutX="53.0" layoutY="254.0" prefWidth="460.0" text="Now playing..." textFill="WHITE" />
+        <Button fx:id="addButton" layoutX="555.0" layoutY="194.0" mnemonicParsing="false" onAction="#addButton" text="Add all songs to Now Playing" />
+            <Label layoutX="524.0" layoutY="108.0" text="Double click on a song to add to Now Playing" textFill="WHITE" />
+            <Label layoutX="520.0" layoutY="341.0" text="Double click on a song to remove from Now Playing" textFill="WHITE" />
+      </children>
+    </Pane>
+  </center>
+  <right>
+    <Pane prefHeight="576.0" prefWidth="188.0" style="-fx-background-color: #333333; -fx-border-color: #262626;" BorderPane.alignment="CENTER">
+      <children>
+        <Button fx:id="accButton" layoutX="39.0" layoutY="83.0" mnemonicParsing="false" onAction="#accButtonClicked" prefHeight="30.0" prefWidth="110.0" text="My Account">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+        <Button fx:id="playlistButon" layoutX="40.0" layoutY="130.0" mnemonicParsing="false" onAction="#playlistButtonClicked" prefHeight="30.0" prefWidth="110.0" text="Playlist">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+        <Button fx:id="radioButton" layoutX="39.0" layoutY="179.0" mnemonicParsing="false" onAction="#radioButtonClicked" prefHeight="30.0" prefWidth="110.0" text="Radio">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+        <Button fx:id="backButton" layoutX="40.0" layoutY="396.0" mnemonicParsing="false" onAction="#backButtonClicked" prefHeight="30.0" prefWidth="110.0" text="Sign Out">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+            <Label fx:id="radiosub" layoutX="18.0" layoutY="217.0" text="Available on subscription" textFill="WHITE" visible="false" />
+      </children>
+    </Pane>
+  </right>
+  <top>
+    <Pane prefHeight="106.0" prefWidth="1024.0" style="-fx-background-color: #262626;" BorderPane.alignment="CENTER">
+      <children>
+        <TextField fx:id="search" layoutX="115.0" layoutY="20.0" prefHeight="27.0" prefWidth="362.0" promptText="Search..." />
+        <ImageView fx:id="image" fitHeight="97.0" fitWidth="110.0" layoutX="4.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true" />
+        <Button fx:id="songButton" layoutX="116.0" layoutY="59.0" mnemonicParsing="false" onAction="#songButton" text="Songs" />
+        <Button fx:id="genreButton" layoutX="182.0" layoutY="59.0" mnemonicParsing="false" onAction="#genreButton" text="Genres" />
+        <Button fx:id="artButton" layoutX="253.0" layoutY="59.0" mnemonicParsing="false" onAction="#artButton" text="Artists" />
+        <Label id="instructions" fx:id="userText" layoutX="328.0" layoutY="63.0" text="Enter a song, name or artist into the box above and click the respective button!" textFill="WHITE" />
+            <Label fx:id="user" layoutX="871.0" layoutY="44.0" text="Welcome, User" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="paymissed" layoutX="872.0" layoutY="64.0" text="PAYMENT MISSED" textFill="#ff2323" visible="false" />
+      </children>
+    </Pane>
+  </top>
+</BorderPane>

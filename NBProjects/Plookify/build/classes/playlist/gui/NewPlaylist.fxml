@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="320.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playlist.gui.PlaylistController">
+   <children>
+      <RadioButton fx:id="friendButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#radioSelect" selected="true" text="Friends">
+         <toggleGroup>
+            <ToggleGroup fx:id="myGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="privateButton" layoutX="14.0" layoutY="38.0" mnemonicParsing="false" onAction="#radioSelect" selected="true" text="Private" toggleGroup="$myGroup" />
+      <Label layoutX="14.0" layoutY="83.0" text="Name of new playlist:" />
+      <TextField fx:id="playlistName" layoutX="14.0" layoutY="100.0" />
+      <Button fx:id="saveButton" layoutX="17.0" layoutY="161.0" mnemonicParsing="false" onAction="#savePlaylist" text="Save" />
+   </children>
+</Pane>
